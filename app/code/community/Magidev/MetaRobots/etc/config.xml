@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * MagiDev
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade MagiDev Package to newer
+ * versions in the future. If you wish to customize Package for your
+ * needs please refer to http://www.magidev.com for more information.
+ *
+ * @category    Magidev
+ * @package     Magidev_MetaRobots
+ * @copyright   Copyright (c) 2014 MagiDev. (http://www.magidev.com)
+ */
+
+/**
+ * Configuration file
+ *
+ * @category   Magidev
+ * @package    Magidev_MetaRobots
+ * @author     Magidev Team <support@magidev.com>
+ */
+-->
+<config>
+    <modules>
+        <Magidev_MetaRobots>
+            <version>0.0.1</version>
+        </Magidev_MetaRobots>
+    </modules>
+    <global>
+        <models>
+            <magidev_robots>
+                <class>Magidev_MetaRobots_Model</class>
+            </magidev_robots>
+        </models>
+        <blocks>
+            <magidev_robots>
+                <class>Magidev_MetaRobots_Block</class>
+            </magidev_robots>
+        </blocks>
+        <helpers>
+            <magidev_robots>
+                <class>Magidev_MetaRobots_Helper</class>
+            </magidev_robots>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <tagwork_seo_block_to_html_before>
+                        <type>singleton</type>
+                        <class>Magidev_MetaRobots_Model_Observer</class>
+                        <method>beforeToHtml</method>
+                    </tagwork_seo_block_to_html_before>
+                </observers>
+            </core_block_abstract_to_html_before>
+        </events>
+    </frontend>
+</config>

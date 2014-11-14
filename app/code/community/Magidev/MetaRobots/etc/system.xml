@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MagiDev
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade MagiDev Package to newer
+ * versions in the future. If you wish to customize Package for your
+ * needs please refer to http://www.magidev.com for more information.
+ *
+ * @category    Magidev
+ * @package     Magidev_MetaRobots
+ * @copyright   Copyright (c) 2014 MagiDev. (http://www.magidev.com)
+ */
+
+/**
+ * Configuration file
+ *
+ * @category   Magidev
+ * @package    Magidev_MetaRobots
+ * @author     Magidev Team <support@magidev.com>
+ */
+-->
+<config>
+    <tabs>
+        <magidev_tab translate="label" module="magidev_robots">
+            <label><![CDATA[MagIDev SEO]]></label>
+            <sort_order>250</sort_order>
+        </magidev_tab>
+    </tabs>
+    <sections>
+        <magidev_seo translate="label" module="magidev_robots">
+            <label>Meta Tags</label>
+            <tab>magidev_tab</tab>
+            <sort_order>2000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general>
+                    <label>Meta Robots</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+
+                        <enabled>
+                            <label>Enable Meta Robots Override</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+
+                        <meta_index>
+                            <label>Meta Tag Robots Rules</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>magidev_robots/system_config_source_robots</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <source_model>magidev_robots/system_config_source_robots</source_model>
+                            <sort_order>10</sort_order>
+                            <comment><![CDATA[
+                                Can be a full action name or request path.<br/>
+                                <b>Example:</b> <br/>
+                                <em>customer_account_*</em> <br/>
+                                <em>/customer/account/*</em> <br/>
+                                <em>*?mode=list</em> <br/>
+                                <em>mode|limit</em> - the rule will be applied on Pages with params <b>mode</b> AND/OR <b>limit</b>
+                            ]]></comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </meta_index>
+
+                        <disable_canonical>
+                            <label>Disable Canonical Tag on Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <comment>Canonical Tag will be removed if Meta Robots Tag is NOINDEX,NOFOLLOW or NOINDEX,FOLLOW</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disable_canonical>
+
+                    </fields>
+                </general>
+            </groups>
+        </magidev_seo>
+    </sections>
+</config>
